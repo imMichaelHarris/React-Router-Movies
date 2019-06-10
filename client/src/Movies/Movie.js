@@ -11,7 +11,7 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = this.props.match.params;
+    const id = Number(this.props.match.params.id);
     this.fetchMovie(id);
   }
 
@@ -24,6 +24,7 @@ export default class Movie extends Component {
       .catch(error => {
         console.error(error);
       });
+
   };
   // Uncomment this code when you're ready for the stretch problems
   // componentWillReceiveProps(newProps){
