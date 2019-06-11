@@ -13,6 +13,10 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
+    if(this.state.savedList.includes(movie)){
+      console.log(movie);
+      return;
+    }
     const savedList = this.state.savedList;
     savedList.push(movie);
     this.setState({ savedList });
